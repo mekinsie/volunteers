@@ -8,7 +8,7 @@ also_reload('lib/**/*.rb')
 DB = PG.connect({:dbname => "volunteer_tracker", :password => 'bean'})
 
 get('/')do
-  erb(:home)
+  redirect "/projects"
 end
 
 # Projects
@@ -46,23 +46,25 @@ end
 
 get('/projects/:id/volunteers') do
   @volunteers = Volunteers.all
+  @project = Project.find(params[:id])
   erb(:volunteers)
 end
 
-get('/projects/:id/volunteers/:volunteer_id') do
-  @volunteer = Volunteer.find(params[:volunteer_id])
-  erb(:volunteer)
-end
+# get('/projects/:id/volunteers/:volunteer_id') do
+#   @volunteer = Volunteer.find(params[:volunteer_id])
+#   erb(:volunteer)
+# end
 
-patch('/projects/:id/volunteers/:volunteer_id') do
-  @volunteer = Volunteer.find(params[:volunter_id])
-  project = Project.find(params[:id])
-  @volunteer.update({:name => params[:name], :project_id => project})
-  erb(:volunteer)
-end
+# patch('/projects/:id/volunteers/:volunteer_id') do
+#   @volunteer = Volunteer.find(params[:volunter_id])
+#   project = Project.find(params[:id])
+#   @volunteer.update({:name => params[:name], :project_id => project})
+#   erb(:volunteer)
+# end
 
-delete('/projects/:id/volunteers/:volunteer_id') do
-  Volunteer.find(params[:volunteer_id]).delete
-  @Volunteers = Volunteer.all
-  erb(:volunteers)
-end
+# delete('/projects/:id/volunteers/:volunteer_id') do
+#   Volunteer.find(params[:volunteer_id]).delete
+#   @Volunteers = Volunteer.all
+#   @project = Project.find(params[:id])
+#   erb(:volunteers)
+# end

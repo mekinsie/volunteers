@@ -1,0 +1,16 @@
+.form {
+  background-color: rgb(146, 195, 241);
+  padding: 20px;
+  border-radius: 30px;
+  /* color:white; */
+  width: 30%;
+}
+
+.btn {
+  background-color: rgb(66, 141, 211);
+  color: white;
+}
+
+.jumbotron {
+  padding: 20px;
+}

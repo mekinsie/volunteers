@@ -44,18 +44,6 @@ class Volunteer
     end
   end
 
-  # def volunteers
-  #   volunteers = []
-  #   results = DB.exec("SELECT * FROM volunteers WHERE volunteer_id = #{@id};")
-  #   results.each do |volunteer|
-  #     id = volunteer.fetch("id").to_i
-  #     name = volunteer.fetch("name")
-  #    volunteer_id = volunteer.fetch("volunteer_id").to_i
-  #     volunteers.push(Volunteer.new({:id => id, :name => name, :volunteer_id =>volunteer_id}))
-  #   end
-  #   volunteers
-  # end
-
   def update(attributes)
     if (attributes.has_key?(:name)) && (attributes.fetch(:name) != nil)
       @name = attributes.fetch(:name)
