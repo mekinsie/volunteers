@@ -2,6 +2,7 @@
 #### **Author: Mekinsie Callahan**
 * * *
 ## Description
+This application tracks volunteers and the projects they are currently working on. A volunteer can only work on one project at a time (one-to-many relationship). The purpose of this project is to rpactice implementing CRUD functionality for both volunteers and projects. A SQL database is used to store all data for this project. 
 
 ## Technologies used
 
@@ -16,11 +17,14 @@
 * Bundler
 * Heroku
 * Bundler
+* PostgreSQL
 
 * * *
 ## Installation & Requirements
-**Ruby or Docker is required to run this application**
+**Ruby or Docker is required to run this application**  
+**PostgreSQL is used to store the data in this project.**
 
+<a href="https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-postgres">PostgreSQL download instructions</a>  
  <a href="https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-ruby">Ruby download instructions</a>  
  <a href="https://www.learnhowtoprogram.com/ruby-and-rails/docker-with-ruby/installing-docker">Docker download instructions</a>  
 1. Navigate to the desired directory where you would like to clone the project to.
