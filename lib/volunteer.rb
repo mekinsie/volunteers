@@ -22,5 +22,49 @@ class Volunteer
     end
   end
 
+  def self.all
+    volunteers = []
+    returned_volunteers = DB.exec("SELECT * FROM volunteers;")
+    returned_volunteers.each do |volunteer|
+      name = volunteer.fetch('name')
+      id = volunteer.fetch('id')
+      project_id = volunteer.fetch('project_id')
+      volunteers.push(Volunteer.new({:name => name, :project_id => project_id, :id => id}))
+    end
+    volunteers
+  end
+
+  def self.find(id)
+   volunteer = DB.exec("SELECT * FROM volunteers WHERE id = #{id};").first
+    if volunteer != nil
+      name = volunteer.fetch("name")
+      id = volunteer.fetch("id")
+      project_id = volunteer.fetch('project_id')
+      Volunteer.new({:name => name, :project_id => project_id, :id => id})
+    end
+  end
+
+  # def volunteers
+  #   volunteers = []
+  #   results = DB.exec("SELECT * FROM volunteers WHERE volunteer_id = #{@id};")
+  #   results.each do |volunteer|
+  #     id = volunteer.fetch("id").to_i
+  #     name = volunteer.fetch("name")
+  #    volunteer_id = volunteer.fetch("volunteer_id").to_i
+  #     volunteers.push(Volunteer.new({:id => id, :name => name, :volunteer_id =>volunteer_id}))
+  #   end
+  #   volunteers
+  # end
+
+  def update(attributes)
+    if (attributes.has_key?(:name)) && (attributes.fetch(:name) != nil)
+      @name = attributes.fetch(:name)
+      DB.exec("UPDATE volunteers SET name = '#{@name}' WHERE id = #{@id};")
+    end
+  end
+
+  def delete
+    DB.exec("DELETE FROM volunteers WHERE id = #{@id};")
+  end
 
 end
