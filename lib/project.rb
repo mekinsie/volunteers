@@ -14,4 +14,10 @@ class Project
     @id = result.first.fetch("id").to_i
   end
 
+  def ==(project_to_compare)
+    if project_to_compare != nil
+      (self.title == project_to_compare.title)
+    end
+  end
+
 end
