@@ -1,4 +1,8 @@
-<h2>Current Projects</h2>
+ <div class="jumbotron">
+  <h2>Project Tracker</h2>
+  <p class="lead">Track projects and their volunteers</p>
+</div>
+<h3>Current Projects</h3>
 
 <% if @projects.any? %>
   <ul>
@@ -11,15 +15,14 @@
 <% end %>
 <br>
 <div class="form">
-  <h5>Add a new project</h5>
+  <h5>Create a new project</h5>
   <form action="/projects" method="post">
     <div class="form-group">
       <label for="title">Title:</label>
       <input id="title" name="title" class="form-control" type="text" placeholder="Title">
     </div>
-    <button type="submit" class="btn">Add!</button>
+    <button type="submit" class="btn">Create</button>
   </form>
 </div>
-
 <br>
-<a href="/" class="btn">Back</a>
+<br>
