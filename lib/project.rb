@@ -5,12 +5,11 @@ class Project
 
   def initialize(attributes)
     @title = attributes[:title]
-    @volunteer_id = attributes[:volunteer_id]
     @id = attributes[:id]
   end
 
   def save
-    result = DB.exec("INSERT INTO projects (title) VALUES ('#{@id}') RETURNING id;")
+    result = DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
     @id = result.first.fetch("id").to_i
   end
 
@@ -18,6 +17,17 @@ class Project
     if project_to_compare != nil
       (self.title == project_to_compare.title)
     end
+  end
+
+  def self.all
+    projects = []
+    returned_projects = DB.exec("SELECT * FROM projects;")
+    returned_projects.each do |project|
+      title = project.fetch('title')
+      id = project.fetch('id')
+      projects.push(Project.new({:title => title, :id => id}))
+    end
+    projects
   end
 
 end
