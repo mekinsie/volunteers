@@ -2,7 +2,9 @@
 #### **Author: Mekinsie Callahan**
 * * *
 ## Description
+This application allows an employee to track projects and the volunteers working on them.
 
+Interact with the application directly: https://ancient-cove-73372.herokuapp.com/
 ## Technologies used
 
 * HTML
