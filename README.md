@@ -1,4 +1,4 @@
-# Volunteers
+# Volunteer & Project Tracker
 #### **Author: Mekinsie Callahan**
 * * *
 ## Description
@@ -25,6 +25,11 @@
 * As a non-profit employee, I want to add volunteers to a project.
 
 * * *
+## Schema
+
+<img src="./public/images/Schema.PNG">
+
+* * *
 ## Installation & Requirements
 **Ruby or Docker is required to run this application**
 
@@ -35,13 +40,13 @@
 2. Once you have chosen your desired directory, clone the github repo using the version control tool `git` (<a href="https://www.learnhowtoprogram.com/introduction-to-programming/getting-started-with-intro-to-programming/git-and-github">download instructions</a>). Typing the following command into your terminal:
 ```bash
 $ git clone https://github.com/mekinsie/volunteers
-
+```
 3. Open the project in VSCode by typing the following in your terminal:
 
 ``` bash
 $ code .
 ```
-* Note: VSCode is a code editing software. If you don't already have it, you can download it <a href="https://code.visualstudio.com/">here</a>  
+* Note: VSCode is a code editing software. If you don't already have it, you can download it <a href="https://code.visualstudio.com/">here</a> 
 
 **If you are using Docker, skip steps 4 & 5.**
 
@@ -59,7 +64,7 @@ $ bundle
 
 ## Running Tests
 * This application was created using test-driven development (TDD).
-* To run the tests yourself, follow the steps below. 
+* To run the tests yourself, follow the steps below.
 
 **Run tests using Ruby (no Docker):**
 If you have Ruby already installed, simply type "rspec" into your terminal while located in the root directory of the project.
@@ -95,15 +100,3 @@ With this alias, the `dspec` command will automatically run RSpec tests. If you 
 ## Contact Information
 
 Reach me via <a href="https://www.linkedin.com/in/mekinsie/" target="_blank">Linkedin</a> or <a href="mailto:mekinsie.aja@gmail.com" target="_blank">email</a></li>.
-
-
-
-<% if @volunteers.any? %>
-  <ul>
-    <% @volunteers.each do |volunteer| %>
-      <li><a href="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are currently no volunteers for this project. </p>
-<% end %>
