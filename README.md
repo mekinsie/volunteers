@@ -18,6 +18,13 @@
 * Bundler
 
 * * *
+## User Stories
+
+* As a non-profit employee, I want to view, add, update and delete projects.
+* As a non-profit employee, I want to view and add volunteers.
+* As a non-profit employee, I want to add volunteers to a project.
+
+* * *
 ## Installation & Requirements
 **Ruby or Docker is required to run this application**
 
@@ -88,3 +95,15 @@ With this alias, the `dspec` command will automatically run RSpec tests. If you 
 ## Contact Information
 
 Reach me via <a href="https://www.linkedin.com/in/mekinsie/" target="_blank">Linkedin</a> or <a href="mailto:mekinsie.aja@gmail.com" target="_blank">email</a></li>.
+
+
+
+<% if @volunteers.any? %>
+  <ul>
+    <% @volunteers.each do |volunteer| %>
+      <li><a href="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no volunteers for this project. </p>
+<% end %>
