@@ -29,7 +29,6 @@ describe Project do
     end
   end
 
-
   context '.all' do
     it 'is empty to start' do
       expect(Project.all).to eq []

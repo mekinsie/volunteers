@@ -2,7 +2,6 @@ class Project
   attr_accessor :title
   attr_reader :id
 
-
   def initialize(attributes)
     @title = attributes[:title]
     @id = attributes[:id]
@@ -51,7 +50,6 @@ class Project
     volunteers
   end
 
-
   def update(attributes)
     if (attributes.has_key?(:title)) && (attributes.fetch(:title) != nil)
       @title = attributes.fetch(:title)
@@ -63,6 +61,4 @@ class Project
     DB.exec("DELETE FROM projects WHERE id = #{@id};")
     DB.exec("UPDATE volunteers SET project_id = NULL WHERE project_id = #{@id};")
   end
-
-
 end

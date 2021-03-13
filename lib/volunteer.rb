@@ -2,7 +2,6 @@ class Volunteer
   attr_accessor :name, :project_id
   attr_reader :id
 
-
   def initialize(attributes)
     @name = attributes[:name]
     @id = attributes[:id]
@@ -54,5 +53,4 @@ class Volunteer
   def delete
     DB.exec("DELETE FROM volunteers WHERE id = #{@id};")
   end
-
 end

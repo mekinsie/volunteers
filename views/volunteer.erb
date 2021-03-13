@@ -1,7 +1,5 @@
 <h1>Volunteer: <%= @volunteer.name%></h1>
-
 <h3>Working on project: <%= @project.title%>
-
 <h4>Update volunteer name:</h4>
 <div class="form">
   <form action="/projects/<%= @project.id %>/volunteers/<%= @volunteer.id %>" method="post">

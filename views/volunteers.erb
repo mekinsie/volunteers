@@ -1,5 +1,4 @@
 <h2>List of all volunteers:</h2>
-
 <% if @volunteers.any? %>
   <ul>
     <% @volunteers.each do |volunteer| %>
@@ -9,6 +8,7 @@
 <% else %>
   <p>There are currently no volunteers for this project. </p>
 <% end %>
-
+<br>
+<p>To add a volunteer, navigate to the project they are working on. Here, there will be a form to add a new volunteer.</p>
 <br>
 <a href="/" class="btn">Back</a>

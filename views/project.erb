@@ -1,6 +1,5 @@
 <h1>Project Title: <%= @project.title%></h1>
 <h3>Volunteers:</h3>
-
 <% if @volunteers.any? %>
   <ul>
     <% @volunteers.each do |volunteer| %>
@@ -10,7 +9,6 @@
 <% else %>
   <p>There are currently no volunteers for this project. </p>
 <% end %>
-
 <a href="/projects/<%= @project.id%>/edit" class="btn">Edit Project</a>
 <br>
 <br>

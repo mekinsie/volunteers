@@ -10,7 +10,6 @@ DB = PG.connect({:dbname => "volunteer_tracker", :password => 'bean'})
 get('/')do
   redirect "/projects"
 end
-
 # Projects
 # See all projects
 get('/projects') do

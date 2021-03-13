@@ -30,11 +30,15 @@
 <img src="./public/images/Schema.PNG">
 
 * * *
-## Installation & Requirements
-**Ruby or Docker is required to run this application**
+## Software Requirements
+* **Ruby or Docker is required to run this application**
+* **PostgreSQL is required to run the database**  
 
  <a href="https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-ruby">Ruby download instructions</a>  
  <a href="https://www.learnhowtoprogram.com/ruby-and-rails/docker-with-ruby/installing-docker">Docker download instructions</a>  
+  <a href="https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/installing-postgres">PosgreSQL download instructions</a>  
+
+## Installation Instructions
 1. Navigate to the desired directory where you would like to clone the project to.
 
 2. Once you have chosen your desired directory, clone the github repo using the version control tool `git` (<a href="https://www.learnhowtoprogram.com/introduction-to-programming/getting-started-with-intro-to-programming/git-and-github">download instructions</a>). Typing the following command into your terminal:
@@ -46,7 +50,7 @@ $ git clone https://github.com/mekinsie/volunteers
 ``` bash
 $ code .
 ```
-* Note: VSCode is a code editing software. If you don't already have it, you can download it <a href="https://code.visualstudio.com/">here</a> 
+* Note: VSCode is a code editing software. If you don't already have it, you can download it <a href="https://code.visualstudio.com/">here</a>
 
 **If you are using Docker, skip steps 4 & 5.**
 
@@ -61,6 +65,17 @@ $ gem install bundler
 ``` bash
 $ bundle
 ```
+6. To recreate the database used in this project, type the following into your terminal:
+```
+$ createdb volunteer_tracker
+$ psql volunteer_tracker < database_backup.sql
+$ createdb -T volunteer_tracker volunteer_tracker_test
+```
+7. Start a local server in your browser by typing the following into the terminal:
+```
+$ ruby app.rb
+```
+8. In your default browser, type "localhost:4567" into the search bar and press enter. Here, you will see the live server.
 
 ## Running Tests
 * This application was created using test-driven development (TDD).
