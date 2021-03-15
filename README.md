@@ -15,7 +15,7 @@ This application allows an employee to track projects and the volunteers working
 * Sinatra
 * Capybara
 * Bundler
-* Bundler
+* PostgreSQL
 
 * * *
 ## User Stories
